@@ -12,8 +12,42 @@ If Github is accessible, there's a workaround. Here's how:
 
 ## Usage
 
-Currently only `ollama/ollama:0.1.32` is supported
+### Dump an image
 
 ```bash
-./scripts/load.sh
+./scripts/dump.sh <image-tag>
+```
+
+For example:
+
+```bash
+$ ./scripts/dump.sh alpine:latest
+💾 Dumping alpine:latest...
+
+output path: registry/alpine-latest.tar
+parent dir: registry
+Image file is split successfully
+The file is removed. Please commit
+
+🚀 Done
+```
+
+### Load an image
+
+```bash
+./scripts/load.sh <image-tag>
+```
+
+For example:
+
+```bash
+$ ./scripts/load.sh alpine:latest
+💾 Loading alpine:latest...
+
+image path: registry/alpine-latest.tar
+Joining image files...
+Loaded image: alpine:latest
+The temporary image file is removed.
+
+🚀 Done
 ```
